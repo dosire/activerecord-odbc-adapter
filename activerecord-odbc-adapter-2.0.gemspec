@@ -21,11 +21,11 @@ Gem::Specification.new do |s|
     s.specification_version = 2
 
     if current_version >= 3 then
-      s.add_runtime_dependency(%q<activerecord>, [">= 2.0.2"])
+      #s.add_runtime_dependency(%q<activerecord>, [">= 2.0.2"])
     else
-      s.add_dependency(%q<activerecord>, [">= 2.0.2"])
+      #s.add_dependency(%q<activerecord>, [">= 2.0.2"])
     end
   else
-    s.add_dependency(%q<activerecord>, [">= 2.0.2"])
+    #s.add_dependency(%q<activerecord>, [">= 2.0.2"])
   end
 end
