@@ -1584,6 +1584,9 @@ begin
             symbl = :virtuoso 
           elsif dbmsName =~ /SQLAnywhere/i or dbmsName =~ /adaptiveserveranywhere/i
             symbl = :sqlanywhere
+          elsif dbmsName =~ /visualfoxpro/i
+            # Try to access Visual Fox Pro database as a PostgreSQL database, works for simple queries.
+            symbl = :postgresql
           else
             raise ActiveRecord::ActiveRecordError, "ODBCAdapter: Unsupported database (#{dbmsName})"
           end
