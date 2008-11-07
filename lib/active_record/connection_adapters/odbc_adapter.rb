@@ -1582,7 +1582,7 @@ begin
             symbl = :sybase
           elsif dbmsName =~ /virtuoso/i
             symbl = :virtuoso 
-          elsif dbmsName =~ /SQLAnywhere/i
+          elsif dbmsName =~ /SQLAnywhere/i or dbmsName =~ /adaptiveserveranywhere/i
             symbl = :sqlanywhere
           else
             raise ActiveRecord::ActiveRecordError, "ODBCAdapter: Unsupported database (#{dbmsName})"
