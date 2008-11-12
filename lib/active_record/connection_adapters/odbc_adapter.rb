@@ -1715,19 +1715,17 @@ begin
           #
           # The conversions below are consistent with the mappings in
           # ODBCColumn#mapSqlTypeToGenericType and Column#klass.
-          res = value
           case value
           when ODBC::TimeStamp
-            res = Time.gm(value.year, value.month, value.day, value.hour, 
-              value.minute, value.second)
+            Time.gm(value.year, value.month, value.day, value.hour, value.minute, value.second)
           when ODBC::Time
             now = DateTime.now
-            res = Time.gm(now.year, now.month, now.day, value.hour, 
-              value.minute, value.second)
+            Time.gm(now.year, now.month, now.day, value.hour, value.minute, value.second)
           when ODBC::Date
-            res = Date.new(value.year, value.month, value.day)
+            Date.new(value.year, value.month, value.day)
+          else
+            value
           end
-          res
         rescue
           # Handle pre-epoch dates
           # TODO Write a test to show that this works beyond anecdotal evidence
