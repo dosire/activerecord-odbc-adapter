@@ -1728,6 +1728,10 @@ begin
             res = Date.new(value.year, value.month, value.day)
           end
           res
+        rescue
+          # Handle pre-epoch dates
+          # TODO Write a test to show that this works beyond anecdotal evidence
+          DateTime.new(value.year, value.month, value.day, value.hour, value.minute, value.second)
         end
         
         # In general, ActiveRecord uses lowercase attribute names. This may
