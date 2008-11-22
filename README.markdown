@@ -1,11 +1,18 @@
-= OpenLink ODBC Data Adapter for Ruby on Rails
+# OpenLink ODBC Data Adapter for Ruby on Rails
 
 (C) 2008 OpenLink Software
 
 
-== Status
+# Status
 
-<b>23-Apr-2008</b>
+** 22-Nov-2008**
+You can install the dosire gem from github as follows:
+(sudo) gem install dosire-active-record-odbc
+
+If you haven't done so already first add github to rubygems with:
+
+
+**23-Apr-2008**
 
 The adapter has been updated to support Rails 2.0.2 / ActiveRecord 2.0.2
 The new adapter (v2.0) is not recommended for use with earlier releases of
@@ -22,7 +29,7 @@ respective adapter when using the previous releases.
 Added support for DSN-less connections (thanks to Ralf Vitasek).
 Added support for SQLAnywhere (thanks to Bryan Lahartinger).
 
-<b>23-Feb-2007</b>
+**23-Feb-2007**
 
 The adapter has been updated to support Rails 1.2.x / ActiveRecord 1.15.x.
 The new adapter (v1.4) is not recommended for use with Rails 1.1 / ActiveRecord
@@ -32,10 +39,10 @@ The driver now supports the new ActiveRecord :decimal type and an
 :emulate_booleans connection option. See http://odbc-rails.rubyforge.org for
 more information about this option.
 
-<b>09-Jan-2007</b>
+**09-Jan-2007**
 
 The adapter accompanying this note is a Generic ODBC Adapter for Ruby on Rails
-being developed by <B>OpenLink&nbsp;Software</B>[http://www.openlinksw.com].
+being developed by **OpenLink&nbsp;Software**[http://www.openlinksw.com].
 
 The aim of this development is to provide a single ODBC-based adapter
 capable of supporting the most popular DBMSes, in contrast to the
@@ -55,7 +62,7 @@ Testing has been performed on Linux, Windows and Mac OS X using
 OpenLink's own ODBC drivers and the native Virtuoso ODBC client.
 
 
-== Pre-Requisites
+# Pre-Requisites
 
 The OpenLink ODBC Adapter for Ruby on Rails needs the
 ActiveRecord[http://wiki.rubyonrails.com/rails/pages/ActiveRecord]
@@ -66,7 +73,7 @@ Ruby&nbsp;ODBC&nbsp;Bridge[http://www.ch-werner.de/rubyodbc]
 (release 0.9991 or later), to bridge to an underlying ODBC driver.
 
 
-== Contents
+# Contents
 
 In the accompanying sources, the lib directory structure is equivalent
 to the lib directory located under ACTIVE_RECORD_ROOT in your main
@@ -100,26 +107,26 @@ the tests similarly to cope with limitations of other Rails-supported
 databases. The patched versions of files touched by odbc_rails.diff can
 be found in support/test.
 
-== Installation
+# Installation
 
 There are 3 ways to install the ODBC Adapter package: either as a gem
 (recommended), a plugin, or by running the custom installation script. Pick
 one of the following, depending on whether you want the adapter to be
 available system-wide or just within a particular Rails project.
 
-=== Installation as a Gem
+# Installation as a Gem
 
 * Install the odbc-rails gem by running:
 
     # gem install -r activerecord-odbc-adapter --include-dependencies
 
 
-=== Installation as a Plugin
+# Installation as a Plugin
 
 Installing the OpenLink ODBC Data Adapter as a plugin makes it available to
 a particular Rails application only.
 
-==== Automatic Plugin installation
+# Automatic Plugin installation
 
 The adapter can be automatically installed as a plugin by navigating to the
 root of your Rails application and typing either:
@@ -132,12 +139,12 @@ On Windows, replace <tt>script/plugin</tt> by <tt>ruby script/plugin</tt>.
 e.g. <tt>ruby script/plugin install odbc-rails</tt>
 
 
-==== Manual Plugin Installation
+# Manual Plugin Installation
 
 You can also install the plugin manually by unpacking the sources into the
 vendor/plugins directory of your Rails application.
 
-=== Custom installation script
+# Custom installation script
 
 When using <tt>rake install</tt> or running the install_odbc.rb script by
 hand, the script tries to determine the location of the activerecord
@@ -155,7 +162,7 @@ If all else fails this document also describes the steps to install the
 ODBC adapter into activerecord manually.
 
 
-==== Using rake
+# Using rake
 
 The simplest way to install the adapter is by using the following
 command as root:
@@ -176,7 +183,7 @@ The Rakefile also defines some targets specifically for developers:
     $ rake clean	# Remove generated files and directories
 
 
-==== Running installation script
+# Running installation script
 
 The second way of installing the adapter is running the
 <tt>install_odbc.rb</tt> script as root.
@@ -188,7 +195,7 @@ or if your system supports sudo:
     $ sudo ruby install_odbc.rb
 
 
-=== Installing files manually
+# Installing files manually
 
 The third way of installing the adapter is by performing the installation
 steps yourself.
@@ -197,24 +204,24 @@ steps yourself.
 
 * Copy the odbcext_*.rb files to the ACTIVE_RECORD_ROOT/lib/active_record/vendor/ directory
 
-== Configuring the Adapter
+# Configuring the Adapter
 
 Examples of the required connection parameters can be found in
 
    test/connections/native_odbc/connection.rb
 
-If you enable call-tracing by setting :trace => true,  specify the
+If you enable call-tracing by setting :trace #> true,  specify the
 logger output file as illustrated in connection.rb, e.g.
 
-    ActiveRecord::Base.logger = Logger.new("debug_odbc.log")
+    ActiveRecord::Base.logger # Logger.new("debug_odbc.log")
 
-== License
+# License
 
 The OpenLink ODBC Adapter for Ruby on Rails is released under the
 MIT license as detailed in the file COPYING.
 
 
-=== Submitting fixes and enhancements
+# Submitting fixes and enhancements
 
 Patches and new contributions can be submitted as diffs from the
 current CVS archive by:
