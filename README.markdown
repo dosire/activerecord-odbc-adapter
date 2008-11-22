@@ -5,12 +5,9 @@
 
 # Status
 
-** 22-Nov-2008**
-You can install the dosire gem from github as follows:
-(sudo) gem install dosire-active-record-odbc
+**22-Nov-2008**
 
-If you haven't done so already first add github to rubygems with:
-
+Added new install information
 
 **23-Apr-2008**
 
@@ -116,10 +113,13 @@ available system-wide or just within a particular Rails project.
 
 # Installation as a Gem
 
+* If you haven't done so already first add github to rubygems with:
+  
+  gem sources -a http://gems.github.com
+
 * Install the odbc-rails gem by running:
 
-    # gem install -r activerecord-odbc-adapter --include-dependencies
-
+  gem install -r dosire-activerecord-odbc-adapter --include-dependencies
 
 # Installation as a Plugin
 
