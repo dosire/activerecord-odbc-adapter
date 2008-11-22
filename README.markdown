@@ -111,7 +111,7 @@ There are 3 ways to install the ODBC Adapter package: either as a gem
 one of the following, depending on whether you want the adapter to be
 available system-wide or just within a particular Rails project.
 
-# Installation as a Gem
+# Installation as a Gem (recommended)
 
 * If you haven't done so already first add github to rubygems with:
   
