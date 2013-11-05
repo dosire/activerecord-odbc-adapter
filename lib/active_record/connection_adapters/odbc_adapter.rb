@@ -786,6 +786,11 @@ begin
           retVal
         end
         
+        #added to fix the primry key missing issue
+        def primary_key
+        	return "id"
+        end
+        
         # Returns a record hash with the column names as keys and column values
         # as values.
         def select_one(sql, name = nil)
